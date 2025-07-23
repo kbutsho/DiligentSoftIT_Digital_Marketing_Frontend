@@ -1,0 +1,51 @@
+.contentWrapper {
+  flex-grow: 1;
+  padding: 2rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #f8f9fa;
+  width: 100%;
+}
+
+.layoutContainer {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: #212529; 
+  color: white;
+  padding: 1rem;
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+.sidebarCollapsed {
+  width: 80px;
+  align-items: center;
+}
+
+.sidebarExpanded {
+  width: 240px;
+  align-items: flex-start;
+  font-size: 14px;
+}
+.activeLink {
+  background-color: rgba(149, 148, 162, 0.458);
+  border-radius: 4px;
+}
+.activeLinkCollapsed {
+  background-color: #212529; 
+  border-radius: 4px;
+}
+
+.logoutBtn {
+  cursor: pointer;
+}
+
+.logoutBtn:hover {
+  opacity: 0.8; /* optional visual feedback on hover */
+}
