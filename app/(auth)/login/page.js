@@ -79,9 +79,9 @@ const LoginPage = () => {
                         <div className="card-body">
                             <h3 className="card-title mb-4 text-center">Login</h3>
                             <form onSubmit={handleFormSubmit}>
-                                {/* Email input */}
+
                                 <div className="mb-3">
-                                    <label htmlFor="email" className="form-label">Email</label>
+                                    <label htmlFor="email" className="form-label fw-bold">Email</label>
                                     <input
                                         type="text"
                                         id="email"
@@ -95,9 +95,8 @@ const LoginPage = () => {
                                     </small>
                                 </div>
 
-                                {/* Password input */}
                                 <div className="mb-3">
-                                    <label htmlFor="password" className="form-label">Password</label>
+                                    <label htmlFor="password" className="form-label fw-bold">Password</label>
                                     <input
                                         type="password"
                                         id="password"
@@ -112,7 +111,7 @@ const LoginPage = () => {
                                 </div>
 
                                 {/* Submit button */}
-                                <button type="submit" className="btn btn-primary w-100" disabled={loading}>
+                                <button type="submit" className="btn btn-primary w-100 py-2" disabled={loading}>
                                     {loading ? "Logging in..." : "Login"}
                                 </button>
                             </form>

@@ -1,4 +1,5 @@
 import AboutSection from '@/components/AboutSection';
+import ContactSection from '@/components/ContactSection';
 import FactSection from '@/components/FactSection';
 import FeatureSection from '@/components/FeatureSection';
 import Footer from '@/components/Footer';
@@ -25,6 +26,7 @@ const HomePage = () => {
       <ProjectSection />
       <TestimonialSection />
       <TeamSection />
+      <ContactSection />
       <Footer />
       <span className="btn btn-lg btn-secondary btn-lg-square back-to-top">
         <i className="bi bi-arrow-up"></i>
