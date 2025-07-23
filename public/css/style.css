@@ -213,12 +213,12 @@ h6,
     margin-bottom: 6rem;
     padding: 18rem 0;
     background:
-        url(../img/blob-top-left.png),
-        url(../img/blob-top-right.png),
-        url(../img/blob-bottom-left.png),
-        url(../img/blob-bottom-right.png),
-        url(../img/blob-center.png),
-        url(../img/bg-bottom.png);
+        url(/images/blob-top-left.png),
+        url(/images/blob-top-right.png),
+        url(/images/blob-bottom-left.png),
+        url(/images/blob-bottom-right.png),
+        url(/images/blob-center.png),
+        url(/images/bg-bottom.png);
     background-position:
         left 0px top 0px,
         right 0px top 0px,
@@ -321,11 +321,11 @@ h6,
 .fact {
     margin: 6rem 0;
     background:
-        url(../img/blob-top-left.png),
-        url(../img/blob-top-right.png),
-        url(../img/blob-bottom-left.png),
-        url(../img/blob-bottom-right.png),
-        url(../img/blob-center.png);
+        url(/images/blob-top-left.png),
+        url(/images/blob-top-right.png),
+        url(/images/blob-bottom-left.png),
+        url(/images/blob-bottom-right.png),
+        url(/images/blob-center.png);
     background-position:
         left 0px top 0px,
         right 0px top 0px,
@@ -359,14 +359,14 @@ h6,
     align-items: center;
     justify-content: center;
     color: var(--light);
-    background: url(../img/blob-primary.png) center center no-repeat;
+    background: url(/images/blob-primary.png) center center no-repeat;
     background-size: contain;
     transition: .5s;
 }
 
 .service-item:hover .service-icon {
     color: var(--dark);
-    background: url(../img/blob-secondary.png) center center no-repeat;
+    background: url(/images/blob-secondary.png) center center no-repeat;
     background-size: contain;
 }
 
@@ -449,11 +449,11 @@ h6,
 .newsletter {
     margin: 6rem 0;
     background:
-        url(../img/blob-top-left.png),
-        url(../img/blob-top-right.png),
-        url(../img/blob-bottom-left.png),
-        url(../img/blob-bottom-right.png),
-        url(../img/blob-center.png);
+        url(/images/blob-top-left.png),
+        url(/images/blob-top-right.png),
+        url(/images/blob-bottom-left.png),
+        url(/images/blob-bottom-right.png),
+        url(/images/blob-center.png);
     background-position:
         left 0px top 0px,
         right 0px top 0px,
@@ -514,8 +514,8 @@ h6,
     margin-top: 6rem;
     padding-top: 9rem;
     background:
-        url(../img/bg-top.png),
-        url(../img/map.png);
+        url(/images/bg-top.png),
+        url(/images/map.png);
     background-position:
         center top,
         center center;
