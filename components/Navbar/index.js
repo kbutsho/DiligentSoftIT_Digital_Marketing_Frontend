@@ -14,9 +14,9 @@ const Navbar = () => {
             <div className="collapse navbar-collapse" id="navbarCollapse">
                 <div className="navbar-nav mx-auto py-0">
                     <Link href="/" className="nav-item nav-link active">Home</Link>
-                    <Link href="/" className="nav-item nav-link">About</Link>
-                    <Link href="/" className="nav-item nav-link">Service</Link>
-                    <Link href="/" className="nav-item nav-link">Project</Link>
+                    <Link href="/about" className="nav-item nav-link">About</Link>
+                    <Link href="/service" className="nav-item nav-link">Service</Link>
+                    <Link href="/project" className="nav-item nav-link">Project</Link>
                     <div className="nav-item dropdown">
                         <span className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</span>
                         <div className="dropdown-menu m-0">
