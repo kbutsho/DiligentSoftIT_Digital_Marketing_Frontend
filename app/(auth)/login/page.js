@@ -37,7 +37,7 @@ const LoginPage = () => {
         setLoading(true);
         try {
             const { errors, ...postData } = formData;
-            const response = await axios.post(`${CONFIG.API}/auth/login`, postData);
+            const response = await axios.post(`${CONFIG.BackendURL}/api/auth/login`, postData);
             if (response.data.success) {
                 setFormData((prev) =>
                     Object.keys(prev).reduce((acc, key) => {
