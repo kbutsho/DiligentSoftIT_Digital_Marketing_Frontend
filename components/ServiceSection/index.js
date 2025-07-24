@@ -11,7 +11,7 @@
 //     const fetchData = async () => {
 //         try {
 //             setLoading(true);
-//             const response = await axios.get(`${CONFIG.API}/service?perPage=10`);
+//             const response = await axios.get(`${CONFIG.BackendURL}/api/service?perPage=10`);
 //             setData(response.data.data);
 //         } catch (error) {
 //             // toast.error("Internal server error");
@@ -75,7 +75,7 @@ import { CONFIG } from "@/configuration";
 const ServiceSection = async () => {
     let data = [];
     try {
-        const res = await fetch(`${CONFIG.API}/service?perPage=10`, { cache: 'no-store' });
+        const res = await fetch(`${CONFIG.BackendURL}/api/service?perPage=10`, { cache: 'no-store' });
         const json = await res.json();
         data = json.data || [];
     } catch (error) {
