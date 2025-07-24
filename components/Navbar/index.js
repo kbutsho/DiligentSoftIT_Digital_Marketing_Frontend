@@ -30,7 +30,12 @@ const Navbar = () => {
                         </Link>
                     ))}
                 </div>
-                <Link href="/login" className="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Get Started</Link>
+                <a href="https://wa.me/8801919385680"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">
+                    Get Started
+                </a>
             </div>
         </nav>
     );

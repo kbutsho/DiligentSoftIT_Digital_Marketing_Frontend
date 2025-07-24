@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Footer = () => {
     return (
@@ -7,23 +8,23 @@ const Footer = () => {
                 <div className="row g-5">
                     <div className="col-md-6 col-lg-3">
                         <p className="section-title text-white h5 mb-4">Address<span></span></p>
-                        <p><i className="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                        <p><i className="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                        <p><i className="fa fa-envelope me-3"></i>info@example.com</p>
+                        <p><i className="fa fa-map-marker-alt me-3"></i>
+                            House-186(1st Floor), Road-06, Mohammadia Housing Society, Mohammadpur, Dhaka, Bangladesh</p>
+                        <p><a className='text-white' href="tel:+8801919385680" target="_blank" rel="noopener noreferrer"><i className=" fa fa-phone-alt me-3"></i>+8801919385680</a></p>
+                        <p><a className="text-white" href="mailto:differentdigitalbd@gmail.com" target="_blank" rel="noopener noreferrer"><i className="fa fa-envelope me-3"></i>differentdigitalbd@gmail.com</a></p>
                         <div className="d-flex pt-2">
-                            <a className="btn btn-outline-light btn-social" href=""><i className="fab fa-twitter"></i></a>
-                            <a className="btn btn-outline-light btn-social" href=""><i className="fab fa-facebook-f"></i></a>
-                            <a className="btn btn-outline-light btn-social" href=""><i className="fab fa-instagram"></i></a>
-                            <a className="btn btn-outline-light btn-social" href=""><i className="fab fa-linkedin-in"></i></a>
+                            <a className="btn btn-outline-light btn-social" href="" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
+                            <a className="btn btn-outline-light btn-social" href="https://www.facebook.com/differentdigitalmarketing" target="_blank" rel="noopener noreferrer" ><i className="fab fa-facebook-f"></i></a>
+                            <a className="btn btn-outline-light btn-social" href="" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
+                            <a className="btn btn-outline-light btn-social" href="" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                     <div className="col-md-6 col-lg-3">
                         <p className="section-title text-white h5 mb-4">Quick Link<span></span></p>
-                        <a className="btn btn-link" href="">About Us</a>
-                        <a className="btn btn-link" href="">Contact Us</a>
-                        <a className="btn btn-link" href="">Privacy Policy</a>
-                        <a className="btn btn-link" href="">Terms & Condition</a>
-                        <a className="btn btn-link" href="">Career</a>
+                        <Link className="btn btn-link" href="/about">About Us</Link>
+                        <Link className="btn btn-link" href="/contact">Contact Us</Link>
+                        <Link className="btn btn-link" href="/privacy-policy">Privacy Policy</Link>
+                        <Link className="btn btn-link" href="/terms-conditions">Terms & Condition</Link>
                     </div>
                     <div className="col-md-6 col-lg-3">
                         <p className="section-title text-white h5 mb-4">Gallery<span></span></p>
