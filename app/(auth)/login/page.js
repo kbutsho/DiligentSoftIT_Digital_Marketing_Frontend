@@ -1,7 +1,7 @@
 "use client";
 
 import { ROLE } from "@/constant/role";
-import { handelInputChange } from "@/helper/handelInputChange";
+import { handleInputChange } from "@/helper/handleInputChange";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
@@ -29,7 +29,7 @@ const LoginPage = () => {
     }, [router]);
 
     const handleChange = (event) => {
-        handelInputChange(event, setFormData, formData);
+        handleInputChange(event, setFormData, formData);
     };
 
     const handleFormSubmit = async (event) => {
@@ -81,7 +81,7 @@ const LoginPage = () => {
                             <form onSubmit={handleFormSubmit}>
 
                                 <div className="mb-3">
-                                    <label htmlFor="email" className="form-label fw-bold">Email</label>
+                                    <label htmlFor="email" className="form-label fw-bold mb-2">Email</label>
                                     <input
                                         type="text"
                                         id="email"
@@ -96,7 +96,7 @@ const LoginPage = () => {
                                 </div>
 
                                 <div className="mb-3">
-                                    <label htmlFor="password" className="form-label fw-bold">Password</label>
+                                    <label htmlFor="password" className="form-label fw-bold mb-2">Password</label>
                                     <input
                                         type="password"
                                         id="password"
