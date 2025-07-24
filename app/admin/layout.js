@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import styles from './admin.module.css';
-import { FaTachometerAlt, FaCog, FaBars, FaPowerOff, FaUser } from 'react-icons/fa';
+import { FaTachometerAlt, FaCog, FaBars, FaPowerOff, FaUser, FaServicestack } from 'react-icons/fa';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { CONFIG } from '@/configuration';
 import Cookies from 'js-cookie';
@@ -20,7 +20,13 @@ export default function AdminDashboardLayout({ children }) {
         setIsCollapsed(!isCollapsed);
     };
     const isActive = (href) => pathname === href;
+    const sidebarLinks = [
+        { label: 'Dashboard', href: '/admin/dashboard', icon: FaTachometerAlt },
+        { label: 'Profile', href: '/admin/profile', icon: FaUser },
+        { label: 'Service', href: '/admin/service', icon: FaServicestack },
+        { label: 'Settings', href: '/admin/settings', icon: FaCog }
 
+    ];
     const handleLogout = async () => {
         try {
             setLoading(true);
@@ -55,43 +61,26 @@ export default function AdminDashboardLayout({ children }) {
                         <FaBars role="button" onClick={toggleSidebar} />
                     </li>
 
-                    <li className={`nav-item mb-2 ${isActive('/admin/dashboard')
-                        ? isCollapsed
-                            ? styles.activeLinkCollapsed
-                            : styles.activeLink
-                        : ''
-                        }`}>
-                        <Link
-                            href="/admin/dashboard"
-                            className="nav-link text-white d-flex align-items-center justify-content-start">
-                            <FaTachometerAlt className="me-2" />
-                            {!isCollapsed && 'Dashboard'}
-                        </Link>
-                    </li>
 
-                    <li className={`nav-item mb-2 ${isActive('/admin/profile')
-                        ? isCollapsed
-                            ? styles.activeLinkCollapsed
-                            : styles.activeLink
-                        : ''
-                        }`}>
-                        <Link href="/admin/profile" className="nav-link text-white d-flex align-items-center justify-content-start">
-                            <FaUser className="me-2" />
-                            {!isCollapsed && 'Profile'}
-                        </Link>
-                    </li>
-
-                    <li className={`nav-item mb-2 ${isActive('/admin/settings')
-                        ? isCollapsed
-                            ? styles.activeLinkCollapsed
-                            : styles.activeLink
-                        : ''
-                        }`}>
-                        <Link href="/admin/settings" className="nav-link text-white d-flex align-items-center justify-content-start">
-                            <FaCog className="me-2" />
-                            {!isCollapsed && 'Settings'}
-                        </Link>
-                    </li>
+                    {sidebarLinks.map(({ label, href, icon: Icon }) => (
+                        <li
+                            key={href}
+                            className={`nav-item mb-2 ${isActive(href)
+                                ? isCollapsed
+                                    ? styles.activeLinkCollapsed
+                                    : styles.activeLink
+                                : ''
+                                }`}
+                        >
+                            <Link
+                                href={href}
+                                className="nav-link text-white d-flex align-items-center justify-content-start"
+                            >
+                                <Icon className="me-2" />
+                                {!isCollapsed && label}
+                            </Link>
+                        </li>
+                    ))}
 
                     <li className={`nav-item mb-2 ${styles.logoutBtn}`}>
                         <span onClick={handleLogout} className="nav-link text-danger d-flex align-items-center justify-content-start">
