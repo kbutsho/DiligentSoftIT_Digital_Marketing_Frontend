@@ -52,7 +52,6 @@ h6,
 
 /*** Button ***/
 .btn {
-    font-weight: 500;
     transition: .5s;
 }
 
@@ -588,12 +587,4 @@ h6,
 .footer .copyright a:hover,
 .footer .footer-menu a:hover {
     color: var(--secondary);
-}
-
-
-/* login page */
-.validation-error {
-    font-weight: bold;
-    color: red;
-    font-size: 12px;
 }
