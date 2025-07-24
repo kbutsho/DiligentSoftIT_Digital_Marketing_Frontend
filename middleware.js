@@ -2,7 +2,7 @@
 import { NextResponse } from 'next/server';
 import { ROLE } from './constant/role';
 
-const protectedAdminPaths = ['/admin', '/admin/dashboard', '/admin/profile', '/admin/settings'];
+const protectedAdminPaths = ['/admin', '/admin/dashboard', '/admin/profile', '/admin/settings', '/admin/service'];
 
 export function middleware(req) {
     const { pathname } = req.nextUrl;
