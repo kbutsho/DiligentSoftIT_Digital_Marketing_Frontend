@@ -50,7 +50,7 @@ const DashboardservicePage = () => {
                 sortOrder: sortOrder,
                 sortBy: sortBy
             };
-            const response = await axios.get(`${CONFIG.API}/service`, { params: data });
+            const response = await axios.get(`${CONFIG.BackendURL}/api/service`, { params: data });
             if (response.data.success) {
                 setData(response.data.data || []);
                 setTotalItem(response.data.totalItems);
@@ -86,7 +86,7 @@ const DashboardservicePage = () => {
         try {
             const { errors, ...postData } = formData;
             const token = Cookies.get('token');
-            const response = await axios.post(`${CONFIG.API}/service/create`, postData,
+            const response = await axios.post(`${CONFIG.BackendURL}/api/service/create`, postData,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -138,7 +138,7 @@ const DashboardservicePage = () => {
     const handleDelete = async () => {
         try {
             const token = Cookies.get('token');
-            const response = await axios.delete(`${CONFIG.API}/service/${deleteItem?.id}`, {
+            const response = await axios.delete(`${CONFIG.BackendURL}/api/service/${deleteItem?.id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -196,7 +196,7 @@ const DashboardservicePage = () => {
         try {
             const { errors, ...postData } = updateItem;
             const token = Cookies.get('token');
-            const response = await axios.post(`${CONFIG.API}/service/update`, postData,
+            const response = await axios.post(`${CONFIG.BackendURL}/api/service/update`, postData,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -233,7 +233,7 @@ const DashboardservicePage = () => {
             <div className="d-flex flex-wrap align-items-center gap-3 mb-4">
                 <div>
                     <select
-                        className="custom-form-select form-select form-select-sm w-auto"
+                        className="custom-form-select form-select form-select-sm w-auto py-2"
                         value={dataPerPage}
                         onChange={(e) => setDataPerPage(Number(e.target.value))}>
                         <option value={5}>5</option>
@@ -246,13 +246,13 @@ const DashboardservicePage = () => {
                 <div className="flex-grow-1">
                     <input
                         type="text"
-                        className="form-control form-control-sm py-1"
+                        className="form-control form-control-sm py-2"
                         placeholder="Search services..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)} />
                 </div>
                 <div>
-                    <button className="btn btn-outline-primary btn-sm" onClick={toggleAddModal}>Create Service</button>
+                    <button className="btn btn-outline-primary btn-sm py-2" onClick={toggleAddModal}>Create Service</button>
                 </div>
             </div>
 
@@ -376,7 +376,7 @@ const DashboardservicePage = () => {
                                 <h4 className="text-uppercase fw-bold">Add New Service</h4>
                                 <i role="button" aria-label="Close" onClick={toggleAddModal} className="fa fa-times" style={{ fontSize: '2rem', cursor: 'pointer' }}></i>
                             </div>
-                            <form onSubmit={handleFormSubmit}>
+                            <form onSubmit={handleFormSubmit} className="pt-3">
                                 <div className="mb-3">
                                     <label className="mb-2">Title <span className="text-danger">*</span></label>
                                     <input
