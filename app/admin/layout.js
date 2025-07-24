@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import styles from './admin.module.css';
-import { FaTachometerAlt, FaCog, FaBars, FaPowerOff, FaUser, FaServicestack } from 'react-icons/fa';
+import { FaTachometerAlt, FaCog, FaBars, FaPowerOff, FaUser, FaServicestack, FaUsers } from 'react-icons/fa';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { CONFIG } from '@/configuration';
 import Cookies from 'js-cookie';
@@ -24,7 +24,8 @@ export default function AdminDashboardLayout({ children }) {
         { label: 'Dashboard', href: '/admin/dashboard', icon: FaTachometerAlt },
         { label: 'Profile', href: '/admin/profile', icon: FaUser },
         { label: 'Service', href: '/admin/service', icon: FaServicestack },
-        { label: 'Settings', href: '/admin/settings', icon: FaCog }
+        { label: 'Team', href: '/admin/team', icon: FaUsers },
+        { label: 'Settings', href: '/admin/settings', icon: FaCog },
 
     ];
     const handleLogout = async () => {
@@ -32,7 +33,7 @@ export default function AdminDashboardLayout({ children }) {
             setLoading(true);
             const token = Cookies.get('token');
 
-            const response = await axios.post(`${CONFIG.API}/auth/logout`, {},
+            const response = await axios.post(`${CONFIG.BackendURL}/api/auth/logout`, {},
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
