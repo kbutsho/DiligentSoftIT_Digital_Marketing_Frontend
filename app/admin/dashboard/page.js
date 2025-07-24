@@ -1,6 +1,5 @@
-import React from 'react';
 
-const AdminDashboardPage = () => {
+const DashboardPage = () => {
     return (
         <div>
             Dashboard
@@ -8,4 +7,4 @@ const AdminDashboardPage = () => {
     );
 };
 
-export default AdminDashboardPage;
+export default DashboardPage;
