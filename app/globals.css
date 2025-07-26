@@ -6,13 +6,6 @@
 
 
 
-/* login page */
-.validation-error {
-    font-weight: bold;
-    color: red;
-    font-size: 12px;
-}
-
 /* pagination */
 .pagination {
     display: flex;

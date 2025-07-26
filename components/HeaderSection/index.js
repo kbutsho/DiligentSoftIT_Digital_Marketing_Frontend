@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const HeaderSection = () => {
     return (
@@ -11,11 +12,11 @@ const HeaderSection = () => {
                         <p className="text-white pb-3 animated slideInDown">Tempor rebum no at dolore lorem clita rebum
                             rebum ipsum rebum stet dolor sed justo kasd. Ut dolor sed magna dolor sea diam. Sit diam
                             sit justo amet ipsum vero ipsum clita lorem</p>
-                        <a href=""
+                        <Link href="/about"
                             className="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Read
-                            More</a>
-                        <a href="" className="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact
-                            Us</a>
+                            More</Link>
+                        <Link href="/contact" className="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact
+                            Us</Link>
                     </div>
                     <div className="col-lg-6 text-center text-lg-start">
                         <Image className="img-fluid animated zoomIn" src="/images/hero.png" alt="" width={600} height={600} />

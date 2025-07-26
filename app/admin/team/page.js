@@ -485,6 +485,7 @@ const DashboardTeamPage = () => {
                                             onChange={handleChange}
                                             className="form-control"
                                         />
+                                        <div className="invalid-feedback">{formData?.errors?.facebook}</div>
                                     </div>
 
                                     <div className="col-md-6">
@@ -496,6 +497,7 @@ const DashboardTeamPage = () => {
                                             onChange={handleChange}
                                             className="form-control"
                                         />
+                                        <div className="invalid-feedback">{formData?.errors?.twitter}</div>
                                     </div>
 
                                     <div className="col-md-6">
@@ -507,6 +509,7 @@ const DashboardTeamPage = () => {
                                             onChange={handleChange}
                                             className="form-control"
                                         />
+                                        <div className="invalid-feedback">{formData?.errors?.linkedin}</div>
                                     </div>
 
                                     <div className="col-md-6">
@@ -518,6 +521,7 @@ const DashboardTeamPage = () => {
                                             onChange={handleChange}
                                             className="form-control"
                                         />
+                                        <div className="invalid-feedback">{formData?.errors?.instagram}</div>
                                     </div>
 
                                     <div className="col-md-12">
@@ -570,7 +574,6 @@ const DashboardTeamPage = () => {
                                 <h4 className="text-uppercase fw-bold">Update Team Member</h4>
                                 <i role="button" aria-label="Close" onClick={() => setUpdateModal(false)} className="fa fa-times" style={{ fontSize: '2rem', cursor: 'pointer' }}></i>
                             </div>
-                            <pre>{JSON.stringify(updateItem, null, 2)}</pre>
                             <form onSubmit={handleFormUpdate} className="pt-3" encType="multipart/form-data">
                                 <div className="row g-3">
                                     <div className="col-md-6">
@@ -609,6 +612,7 @@ const DashboardTeamPage = () => {
                                             onChange={handleUpdateFormChange}
                                             className="form-control"
                                         />
+                                        <div className="invalid-feedback">{updateItem?.errors?.facebook}</div>
                                     </div>
 
                                     <div className="col-md-6">
@@ -621,6 +625,7 @@ const DashboardTeamPage = () => {
                                             onChange={handleUpdateFormChange}
                                             className="form-control"
                                         />
+                                        <div className="invalid-feedback">{updateItem?.errors?.twitter}</div>
                                     </div>
 
                                     <div className="col-md-6">
@@ -633,6 +638,7 @@ const DashboardTeamPage = () => {
                                             onChange={handleUpdateFormChange}
                                             className="form-control"
                                         />
+                                        <div className="invalid-feedback">{updateItem?.errors?.linkedin}</div>
                                     </div>
 
                                     <div className="col-md-6">
@@ -645,6 +651,7 @@ const DashboardTeamPage = () => {
                                             onChange={handleUpdateFormChange}
                                             className="form-control"
                                         />
+                                        <div className="invalid-feedback">{updateItem?.errors?.instagram}</div>
                                     </div>
 
                                     <div className="col-md-12">

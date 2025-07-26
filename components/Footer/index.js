@@ -8,10 +8,14 @@ const Footer = () => {
                 <div className="row g-5">
                     <div className="col-md-6 col-lg-3">
                         <p className="section-title text-white h5 mb-4">Address<span></span></p>
-                        <p><i className="fa fa-map-marker-alt me-3"></i>
-                            House-186(1st Floor), Road-06, Mohammadia Housing Society, Mohammadpur, Dhaka, Bangladesh</p>
-                        <p><a className='text-white' href="tel:+8801919385680" target="_blank" rel="noopener noreferrer"><i className=" fa fa-phone-alt me-3"></i>+8801919385680</a></p>
-                        <p><a className="text-white" href="mailto:differentdigitalbd@gmail.com" target="_blank" rel="noopener noreferrer"><i className="fa fa-envelope me-3"></i>differentdigitalbd@gmail.com</a></p>
+                        <p><i className="fa fa-map-marker-alt me-2"></i>
+                            <small>House-186(1st Floor), Road-06, Mohammadia Housing Society, Mohammadpur, Dhaka, Bangladesh</small></p>
+                        <p><a className='text-white' href="tel:+8801919385680" target="_blank" rel="noopener noreferrer">
+                            <i className=" fa fa-phone-alt me-2"></i><small>+8801919385680</small>
+                        </a></p>
+                        <p><a className="text-white" href="mailto:differentdigitalbd@gmail.com" target="_blank" rel="noopener noreferrer">
+                            <i className="fa fa-envelope me-2"></i><small>differentdigitalbd@gmail.com</small></a>
+                        </p>
                         <div className="d-flex pt-2">
                             <a className="btn btn-outline-light btn-social" href="" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
                             <a className="btn btn-outline-light btn-social" href="https://www.facebook.com/differentdigitalmarketing" target="_blank" rel="noopener noreferrer" ><i className="fab fa-facebook-f"></i></a>

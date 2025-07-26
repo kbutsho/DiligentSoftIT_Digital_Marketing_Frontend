@@ -9,6 +9,8 @@ const protectedAdminPaths = [
     '/admin/settings',
     '/admin/service',
     '/admin/team',
+    '/admin/testimonial',
+    '/admin/project'
 ];
 
 export function middleware(req) {

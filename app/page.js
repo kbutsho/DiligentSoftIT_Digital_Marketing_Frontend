@@ -18,7 +18,7 @@ const HomePage = () => {
         <Navbar />
         <HeaderSection />
       </div>
-      <FeatureSection />
+      {/* <FeatureSection /> */}
       <AboutSection />
       <FactSection />
       <ServiceSection />

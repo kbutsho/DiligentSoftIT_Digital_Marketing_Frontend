@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import styles from './admin.module.css';
-import { FaTachometerAlt, FaCog, FaBars, FaPowerOff, FaUser, FaServicestack, FaUsers } from 'react-icons/fa';
+import { FaTachometerAlt, FaCog, FaBars, FaPowerOff, FaUser, FaServicestack, FaUsers, FaQuoteRight, FaFolderOpen } from 'react-icons/fa';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { CONFIG } from '@/configuration';
 import Cookies from 'js-cookie';
@@ -25,6 +25,8 @@ export default function AdminDashboardLayout({ children }) {
         { label: 'Profile', href: '/admin/profile', icon: FaUser },
         { label: 'Service', href: '/admin/service', icon: FaServicestack },
         { label: 'Team', href: '/admin/team', icon: FaUsers },
+        { label: 'Testimonial', href: '/admin/testimonial', icon: FaQuoteRight },
+        { label: 'Project', href: '/admin/project', icon: FaFolderOpen },
         { label: 'Settings', href: '/admin/settings', icon: FaCog },
 
     ];

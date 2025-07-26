@@ -90,9 +90,7 @@ const LoginPage = () => {
                                         onChange={handleChange}
                                         className={`form-control ${formData?.errors?.email ? 'is-invalid' : ''}`}
                                     />
-                                    <small className="validation-error">
-                                        {formData?.errors?.email || null}
-                                    </small>
+                                    <div className="invalid-feedback">{formData?.errors?.password}</div>
                                 </div>
 
                                 <div className="mb-3">
@@ -105,9 +103,7 @@ const LoginPage = () => {
                                         onChange={handleChange}
                                         className={`form-control ${formData?.errors?.password ? 'is-invalid' : ''}`}
                                     />
-                                    <small className="validation-error">
-                                        {formData?.errors?.password || null}
-                                    </small>
+                                    <div className="invalid-feedback">{formData?.errors?.password}</div>
                                 </div>
 
                                 {/* Submit button */}

@@ -1,6 +1,17 @@
 import Image from 'next/image';
+import { CONFIG } from "@/configuration";
 
-const ProjectSection = () => {
+const ProjectSection = async () => {
+    let data = [];
+    try {
+        const res = await fetch(`${CONFIG.BackendURL}/api/project?perPage=10`, { cache: 'no-store' });
+        const json = await res.json();
+        data = json.data || [];
+    } catch (error) {
+        console.log(error)
+        data = [];
+    }
+
     return (
         <div className="container-xxl py-5">
             <div className="container py-5 px-lg-5">
@@ -9,119 +20,47 @@ const ProjectSection = () => {
                         Projects<span></span></p>
                     <h1 className="text-center mb-5">Recently Completed Projects</h1>
                 </div>
-                <div className="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
-                    <div className="col-12 text-center">
-                        <ul className="list-inline mb-5" id="portfolio-flters">
-                            <li className="mx-2 active" data-filter="*">All</li>
-                            <li className="mx-2" data-filter=".first">Web Design</li>
-                            <li className="mx-2" data-filter=".second">Graphic Design</li>
-                        </ul>
+
+                {data.length === 0 ? (
+                    <div className="d-flex justify-content-center align-items-center" style={{ minHeight: "300px" }}>
+                        <h5>No Project found</h5>
                     </div>
-                </div>
-                <div className="row g-4 portfolio-container">
-                    <div className="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
-                        <div className="rounded overflow-hidden">
-                            <div className="position-relative overflow-hidden">
-                                <Image className="img-fluid w-100" src="/images/portfolio-1.jpg" alt="img" width={30} height={30} />
-                                <div className="portfolio-overlay">
-                                    <a className="btn btn-square btn-outline-light mx-1" href="img/portfolio-1.jpg"
-                                        data-lightbox="portfolio"><i className="fa fa-eye"></i></a>
-                                    <a className="btn btn-square btn-outline-light mx-1" href=""><i
-                                        className="fa fa-link"></i></a>
+                ) : (
+                    <div className="row g-4 portfolio-container">
+                        {data.map((project, index) => (
+                            <div
+                                key={project.id || index}
+                                className={`col-lg-4 col-md-6 portfolio-item ${index % 2 === 0 ? 'first' : 'second'} wow fadeInUp`}
+                                data-wow-delay={`${(index % 3) * 0.2 + 0.1}s`}
+                            >
+                                <div className="rounded overflow-hidden">
+                                    <div className="position-relative overflow-hidden">
+                                        <Image
+                                            className="img-fluid w-100"
+                                            src={project.image ? `${CONFIG.BackendURL}/storage/${project.image}` : "/images/portfolio-4.jpg"}
+                                            alt={project.title || 'Project Image'}
+                                            width={300}
+                                            height={300}
+                                        />
+                                        <div className="portfolio-overlay">
+                                            <span className="btn btn-square btn-outline-light mx-1" data-lightbox="portfolio">
+                                                <i className="fa fa-eye"></i>
+                                            </span>
+
+                                            <a className="btn btn-square btn-outline-light mx-1" href={project.link || '/'}>
+                                                <i className="fa fa-link"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div className="bg-light p-4">
+                                        <p className="text-primary fw-medium mb-2">{project.name || 'Design & Development'}</p>
+                                        <h5 className="lh-base mb-0">{project.title || 'Untitled Project'}</h5>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="bg-light p-4">
-                                <p className="text-primary fw-medium mb-2">UI / UX Design</p>
-                                <h5 className="lh-base mb-0">Digital Agency Website Design And Development</h5>
-                            </div>
-                        </div>
+                        ))}
                     </div>
-                    <div className="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.3s">
-                        <div className="rounded overflow-hidden">
-                            <div className="position-relative overflow-hidden">
-                                <Image className="img-fluid w-100" src="/images/portfolio-2.jpg" alt="img" width={300} height={300} />
-                                <div className="portfolio-overlay">
-                                    <a className="btn btn-square btn-outline-light mx-1" href="img/portfolio-2.jpg"
-                                        data-lightbox="portfolio"><i className="fa fa-eye"></i></a>
-                                    <a className="btn btn-square btn-outline-light mx-1" href=""><i
-                                        className="fa fa-link"></i></a>
-                                </div>
-                            </div>
-                            <div className="bg-light p-4">
-                                <p className="text-primary fw-medium mb-2">UI / UX Design</p>
-                                <h5 className="lh-base mb-0">Digital Agency Website Design And Development</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.5s">
-                        <div className="rounded overflow-hidden">
-                            <div className="position-relative overflow-hidden">
-                                <Image className="img-fluid w-100" src="/images/portfolio-3.jpg" alt="img" width={300} height={300} />
-                                <div className="portfolio-overlay">
-                                    <a className="btn btn-square btn-outline-light mx-1" href="img/portfolio-3.jpg"
-                                        data-lightbox="portfolio"><i className="fa fa-eye"></i></a>
-                                    <a className="btn btn-square btn-outline-light mx-1" href=""><i
-                                        className="fa fa-link"></i></a>
-                                </div>
-                            </div>
-                            <div className="bg-light p-4">
-                                <p className="text-primary fw-medium mb-2">UI / UX Design</p>
-                                <h5 className="lh-base mb-0">Digital Agency Website Design And Development</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.1s">
-                        <div className="rounded overflow-hidden">
-                            <div className="position-relative overflow-hidden">
-                                <Image className="img-fluid w-100" src="/images/portfolio-4.jpg" alt="img" width={300} height={300} />
-                                <div className="portfolio-overlay">
-                                    <a className="btn btn-square btn-outline-light mx-1" href="img/portfolio-4.jpg"
-                                        data-lightbox="portfolio"><i className="fa fa-eye"></i></a>
-                                    <a className="btn btn-square btn-outline-light mx-1" href=""><i
-                                        className="fa fa-link"></i></a>
-                                </div>
-                            </div>
-                            <div className="bg-light p-4">
-                                <p className="text-primary fw-medium mb-2">UI / UX Design</p>
-                                <h5 className="lh-base mb-0">Digital Agency Website Design And Development</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.3s">
-                        <div className="rounded overflow-hidden">
-                            <div className="position-relative overflow-hidden">
-                                <Image className="img-fluid w-100" src="/images/portfolio-5.jpg" alt="img" width={300} height={300} />
-                                <div className="portfolio-overlay">
-                                    <a className="btn btn-square btn-outline-light mx-1" href="img/portfolio-5.jpg"
-                                        data-lightbox="portfolio"><i className="fa fa-eye"></i></a>
-                                    <a className="btn btn-square btn-outline-light mx-1" href=""><i
-                                        className="fa fa-link"></i></a>
-                                </div>
-                            </div>
-                            <div className="bg-light p-4">
-                                <p className="text-primary fw-medium mb-2">UI / UX Design</p>
-                                <h5 className="lh-base mb-0">Digital Agency Website Design And Development</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.5s">
-                        <div className="rounded overflow-hidden">
-                            <div className="position-relative overflow-hidden">
-                                <Image className="img-fluid w-100" src="/images/portfolio-6.jpg" alt="img" width={300} height={300} />
-                                <div className="portfolio-overlay">
-                                    <a className="btn btn-square btn-outline-light mx-1" href="img/portfolio-6.jpg"
-                                        data-lightbox="portfolio"><i className="fa fa-eye"></i></a>
-                                    <a className="btn btn-square btn-outline-light mx-1" href=""><i
-                                        className="fa fa-link"></i></a>
-                                </div>
-                            </div>
-                            <div className="bg-light p-4">
-                                <p className="text-primary fw-medium mb-2">UI / UX Design</p>
-                                <h5 className="lh-base mb-0">Digital Agency Website Design And Development</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                )}
             </div>
         </div>
     );
