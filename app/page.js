@@ -9,6 +9,7 @@ import NewsletterSection from '@/components/NewsLetterSection';
 import ProjectSection from '@/components/ProjectSection';
 import ServiceSection from '@/components/ServiceSection';
 import TeamSection from '@/components/TeamSection';
+import Test from '@/components/Test/Test';
 import TestimonialSection from '@/components/TestimonialSection';
 
 const HomePage = () => {
@@ -20,6 +21,7 @@ const HomePage = () => {
       </div>
       {/* <FeatureSection /> */}
       <AboutSection />
+      <Test />
       <FactSection />
       <ServiceSection />
       <NewsletterSection />
