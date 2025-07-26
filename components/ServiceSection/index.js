@@ -98,7 +98,7 @@ const ServiceSection = async () => {
                                 key={item.id}
                                 className="col-lg-4 col-md-6 wow fadeInUp"
                                 style={{ visibility: "visible", animationDelay: `${0.1 + index * 0.2}s`, animationName: "fadeInUp" }}>
-                                <div className="service-item d-flex flex-column text-center rounded" style={{ minHeight: "350px" }}>
+                                <div className="service-item d-flex flex-column text-center rounded" style={{ minHeight: "380px" }}>
                                     <div className="service-icon flex-shrink-0">
                                         <i className={`${item.icon} fa-2x`}></i>
                                     </div>

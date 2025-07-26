@@ -44,3 +44,11 @@ cursor: pointer;
     border-radius: 4px;
     padding: 4px 40px;
 }
+
+.blog-description img {
+  max-width: 10%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
