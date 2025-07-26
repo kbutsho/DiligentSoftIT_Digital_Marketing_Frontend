@@ -1,14 +1,15 @@
+
 import Image from 'next/image';
 import { CONFIG } from "@/configuration";
 
 const ProjectSection = async () => {
     let data = [];
     try {
-        const res = await fetch(`${CONFIG.BackendURL}/api/project?perPage=10`, { cache: 'no-store' });
+        const res = await fetch(`${CONFIG.BackendURL}/api/project?perPage=10`, { next: { revalidate: 300 } });
         const json = await res.json();
         data = json.data || [];
     } catch (error) {
-        console.log(error)
+        console.log("internal server error: project", error.message)
         data = [];
     }
 
